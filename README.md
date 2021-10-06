@@ -18,11 +18,17 @@ In 2020, phishing was the most prevalent type of cybercrime, costing the America
 
 ## Problem Definition
 
-We propose using a recent dataset (Vrbančič, 2020) containing 88,647 labelled 111-dimensional features extracting information from domain names, IPs, and webpage content to predict whether a website is phishing or legitimate.
+We propose using a recent dataset (Vrbančič, 2020) containing 88,647 labelled 111-dimensional features to predict whether a website is phishing or legitimate. 96 of the features in the dataset contain information extracted from the domain name and IP, and the other 15 contain information about the website itself. Each of the instances have been verified by multiple sources via the industry standard PhishTank registry. 30,647 of the instances are labeled as phishing and the other 58,000 instances are labeled as legitimate.
 
 ## Methods
 
-We begin by running Principal Component Analysis on the feature set to reduce the dimensionality and to optimize our training. We then train three models using the reduced feature set, namely a model based on decision trees, one based on neural networks, and one based on an SVM to predict whether unseen examples are phishing or legitimate. Both of these can be implemented using scikit-learn.
+Unsupervised
+We begin by running Principal Component Analysis on the feature set to reduce the dimensionality and to optimize our training. 
+
+Supervised
+We train three models using the reduced feature set, namely a model based on decision trees, one based on neural networks, and one based on an SVM to predict whether unseen examples are phishing or legitimate.
+
+Our entire pipeline can be implemented using scikit-learn and we can perform data visualizations using Seaborn and Matplotlib.
 
 ## Potential Results/Discussion
 
@@ -42,4 +48,26 @@ Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data i
 
 ## Timeline
 
-TODO
+Main Goal:
+To begin working soon and finish the project before the beginning of finals week (Dec 1)
+
+Assignments Due:
+Midpoint Report Nov 16
+Final Report Dec 7
+
+Milestones to Aim For:
+The name listed on each task does not mean that person must do the task himself, rather it means he is in charge of getting other team members to complete the task.
+
+Expertise Areas:
+ML Coding - All members
+Github Workflows - Jano
+Video Editing - Josh
+
+Data Cleanup: October 20 (Tejas)
+Feature Selection: October 25th (Tusheet)
+Initial attempt at Unsupervised Learning: November 1st (Each team member shall attempt his own version of unsupervised learning and see who gets the best results) (Tillson)
+Initial attempt at Supervised Learning: November 1st (Each team member shall attempt his own version of supervised learning and see who gets the best results) (Tejas and Tusheet)
+Finalize Unsupervised Learning: November 5th (Josh)
+Finish Midterm Report: November 14th (Jano)
+Polish results from both Supervised and Unsupervised Learnings: (Jano and Tillson)
+Final Report and Video: December 5th (Josh)
