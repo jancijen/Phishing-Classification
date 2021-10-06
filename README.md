@@ -1,8 +1,11 @@
-## Welcome to GitHub Pages
+## Welcome to ML 7641 (Fall 2021) - Project Group 20
 
-You can use the [editor on GitHub](https://github.com/jancijen/Phishing-Classification/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Team Members:
+1. Tusheet Sidharth Goli - tgoli3
+2. Tejas Rajamadam Pradeep – tpradeep8
+3. Tillson Thomas Galloway – tgalloway7
+4. Jan Jendrusak – jjendrusak3
+5. Jiaxuan Chen – jchen813
 
 ### Markdown
 
