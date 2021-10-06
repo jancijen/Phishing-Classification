@@ -51,22 +51,12 @@ Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data i
 Main Goal:
 To begin working soon and finish the project before the beginning of finals week (Dec 1)
 
-Assignments Due:
-
-Midpoint Report Nov 16
-
-Final Report Dec 7
+Assignments Due: Midpoint Report Nov 16, Final Report Dec 7
 
 Milestones to Aim For:
 The name listed on each task does not mean that person must do the task himself, rather it means he is in charge of getting other team members to complete the task.
 
-Expertise Areas:
-
-ML Coding - All members
-
-Github Workflows - Jano
-
-Video Editing - Josh
+Expertise Areas: ML Coding: (All members), Github Workflows: (Jano), Video Editing: (Josh)
 
 Data Cleanup: October 20 (Tejas)
 
