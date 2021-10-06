@@ -52,22 +52,34 @@ Main Goal:
 To begin working soon and finish the project before the beginning of finals week (Dec 1)
 
 Assignments Due:
+
 Midpoint Report Nov 16
+
 Final Report Dec 7
 
 Milestones to Aim For:
 The name listed on each task does not mean that person must do the task himself, rather it means he is in charge of getting other team members to complete the task.
 
 Expertise Areas:
+
 ML Coding - All members
+
 Github Workflows - Jano
+
 Video Editing - Josh
 
 Data Cleanup: October 20 (Tejas)
+
 Feature Selection: October 25th (Tusheet)
+
 Initial attempt at Unsupervised Learning: November 1st (Each team member shall attempt his own version of unsupervised learning and see who gets the best results) (Tillson)
+
 Initial attempt at Supervised Learning: November 1st (Each team member shall attempt his own version of supervised learning and see who gets the best results) (Tejas and Tusheet)
+
 Finalize Unsupervised Learning: November 5th (Josh)
+
 Finish Midterm Report: November 14th (Jano)
+
 Polish results from both Supervised and Unsupervised Learnings: (Jano and Tillson)
+
 Final Report and Video: December 5th (Josh)
