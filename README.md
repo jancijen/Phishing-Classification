@@ -30,6 +30,14 @@ We train three models using the reduced feature set, namely a model based on dec
 
 Our entire pipeline can be implemented using scikit-learn and we can perform data visualizations using Seaborn and Matplotlib.
 
+Approach Ideas: https://towardsdatascience.com/phishing-domain-detection-with-ml-5be9c99293e5
+
+## Datasets
+
+Kaggle: https://www.kaggle.com/ahmednour/website-phishing-data-set
+
+Science Direct: https://www.sciencedirect.com/science/article/pii/S2352340920313202
+
 ## Potential Results/Discussion
 
 We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
