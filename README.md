@@ -54,7 +54,9 @@ Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data i
 
 ## Video
 
-Link: TODO
+Link: https://www.youtube.com/watch?v=25_FMB6S8uM
+
+`video: https://www.youtube.com/watch?v=25_FMB6S8uM`
 
 ## Timeline
 
