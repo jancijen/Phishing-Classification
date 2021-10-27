@@ -1,0 +1,27 @@
+name: Sarcasm-Detection-DLT
+
+channels:
+    - conda-forge
+    - anaconda
+
+dependencies:
+  - python >= 3.8
+  - pip
+  - nodejs
+  - jupyterlab
+  - matplotlib
+  - umap-learn
+  - pandas
+  - seaborn
+  - scikit-learn
+  - tqdm
+  - papermill
+  - tensorboard
+  - logomaker
+  - python-snappy
+  - swifter
+  - pip:
+    - cmake
+    - MulticoreTSNE
+    - tensorboardX
+    - ipywidgets
