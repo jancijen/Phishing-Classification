@@ -1,4 +1,4 @@
-name: Sarcasm-Detection-DLT
+name: Phishing-Classification
 
 channels:
     - conda-forge
