@@ -72,7 +72,7 @@ Features Dimensionality Reduction
 * What we found out tho was using PCA for dimensionality reduction actually did not improve the results of k-NN at all. It in fact made the results a little worse.
 * The reason we think this is because the data points are quite different and have many parameters they differ by, so performing a k-NN algorithm did not lead to good clustering.
 
-## Results
+## Results and Analysis
 
 We concentrated on Supervised Learning and implemented several different ways of performing Supervised Learning on out dataset.
 
