@@ -37,17 +37,29 @@ Kaggle: [https://www.kaggle.com/ahmednour/website-phishing-data-set](https://www
 Science Direct: [https://www.sciencedirect.com/science/article/pii/S2352340920313202](https://www.sciencedirect.com/science/article/pii/S2352340920313202)
 
 ## Data
+
 We have an imbalanced “full” dataset with 88647 data points and class ratio (phishing/non-phishing) of 0.528, and a “balanced” “small” subset with 58645 data points and class ratio (phishing/non-phishing) of 1.095. In the following sections will report results for the “full” dataset. The unbalanced dataset is more reflective of the real world: there are more benign emails than phishing emails on the internet.
 
-<p align="center>
 <img src="images\data1.png" alt="data1.png">
-</p>
 
 Most of our features in the dataset are URL related according to the following URL sub-sections: (Vrbančič, 2020)
 
-<p align="center>
 <img src="images\data2.png" alt="data2.png">
-</p>
+
+### Data Split
+
+For the train-validation-test split we used a stratified split to split the dataset (88647 data points) as follows:
+* 60% - training set (53188 data points)
+* 20% - validation set (17729 data points)
+* 20% - test set (17730 data points)
+
+All of the splits have the same class ratio (phishing/non-phishing) of 0.528.
+
+### Data Analysis
+
+We ran t-SNE to reduce the full training dataset from 112 features to 2 and colored the data points according to their class (phishing or non-phishing website):
+
+<img src="images\data3.png" alt="data3.png">
 
 ## Potential Results/Discussion
 
