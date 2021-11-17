@@ -92,7 +92,7 @@ We concentrated on Supervised Learning and implemented several different ways of
         * Recall: 0.929
         * FPR: 0.034
 
-<img src="images\dt_result.png" alt="dt_result.png">
+<img src="images\dt_result.png" alt="dt_result.png"></img>
 
     * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
         * “qty_dollar_file”: 0.516
@@ -117,7 +117,7 @@ We concentrated on Supervised Learning and implemented several different ways of
         * Recall: 0.851
         * FPR: 0.085
 
-<img src="images\knn_result.png" alt="knn_result.png">
+<img src="images\knn_result.png" alt="knn_result.png"></img>
 
     * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
 
@@ -134,7 +134,7 @@ We concentrated on Supervised Learning and implemented several different ways of
         * Recall: 0.760
         * FPR: 0.132
 
-<img src="images\knn_pca_result.png" alt="knn_pca_result.png">
+<img src="images\knn_pca_result.png" alt="knn_pca_result.png"></img>
 
     * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
 
