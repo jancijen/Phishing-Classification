@@ -7,7 +7,7 @@ Team Members:
 4. Jan Jendrusak – jjendrusak3
 5. Jiaxuan Chen – jchen813
 
-# Project Proposal
+# Midterm Project Report
 
 ## Project Name
 
