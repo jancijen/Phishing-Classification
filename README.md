@@ -72,7 +72,73 @@ Features Dimensionality Reduction
 * What we found out tho was using PCA for dimensionality reduction actually did not improve the results of k-NN at all. It in fact made the results a little worse.
 * The reason we think this is because the data points are quite different and have many parameters they differ by, so performing a k-NN algorithm did not lead to good clustering.
 
-## Potential Results/Discussion
+## Results
+
+We concentrated on Supervised Learning and implemented several different ways of performing Supervised Learning on out dataset.
+
+### Decision Tree
+
+1. Decision Tree
+    * We used grid search to optimize hyperparameters on the validation dataset, namely: 
+        * Criterion (gini or entropy)
+        * Max depth
+    * The best decision tree was the one with entropy criterion and max depth of 20: Accuracy: 0.950, Balanced accuracy: 0.945, F1: 0.928, Precision: 0.926, Recall: 0.930
+    * We retrained a decision tree with these hyperparameters on merged training and validation data and it yielded the following test results:
+        * F1: 0.932
+        * Accuracy: 0.953
+        * Balanced accuracy: 0.948
+        * MCC: 0.897
+        * Precision: 0.936
+        * Recall: 0.929
+        * FPR: 0.034
+
+<img src="images\dt_result.png" alt="dt_result.png">
+
+    * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
+        * “qty_dollar_file”: 0.516
+        * “time_domain_activation”: 0.117
+        * “directory_length”: 0.076
+    * “qty_dollar_file” corresponds to the number of occurrences of “$” in the file section of URL - since there is no clear convention for using “$” in URL this seems rather arbitrary.
+    * “time_domain_activation” corresponds to domain activation time (in days) - this sounds like a reasonable feature to be helpful to determine whether a web page is or is not phishing.
+    * “directory_length” corresponds to the length of the directory section of URL - this might sound reasonable since phishing websites might try to use nested folders to create longer and therefore less readable URL.
+
+### k-NN
+
+2. k-NN
+    * We used grid search to optimize hyperparameters on the validation dataset, namely: 
+        * Number of neighbors
+    * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.883, Balanced accuracy: 0.872, F1: 0.832, Precision: 0.827, Recall: 0.837
+    * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
+        * F1: 0.846
+        * Accuracy: 0.893
+        * Balanced accuracy: 0.883
+        * MCC: 0.764
+        * Precision: 0.841
+        * Recall: 0.851
+        * FPR: 0.085
+
+<img src="images\knn_result.png" alt="knn_result.png">
+
+    * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
+
+### k-NN - data with reduced dimensionality (PCA) - 2 features
+
+3. k-NN - data with reduced dimensionality (PCA) - 2 features
+    * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.820, Balanced accuracy: 0.804, F1: 0.742, Precision: 0.736, Recall: 0.749
+    * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
+        * F1: 0.756
+        * Accuracy: 0.831
+        * Balanced accuracy: 0.814
+        * MCC: 0.627
+        * Precision: 0.753
+        * Recall: 0.760
+        * FPR: 0.132
+
+<img src="images\knn_pca_result.png" alt="knn_pca_result.png">
+
+    * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
+
+## Potential Results/Discussion (Project Proposal)
 
 We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
 
