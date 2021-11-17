@@ -18,7 +18,7 @@ In 2020, phishing was the most prevalent type of cybercrime, costing the America
 
 ## Problem Definition
 
-We propose using a recent dataset (Vrbančič, 2020) containing 88,647 labelled 111-dimensional features to predict whether a website is phishing or legitimate. 96 of the features in the dataset contain information extracted from the domain name and IP, and the other 15 contain information about the website itself. Each of the instances have been verified by multiple sources via the industry standard PhishTank registry. 30,647 of the instances are labeled as phishing and the other 58,000 instances are labeled as legitimate.
+We used a recent dataset (Vrbančič, 2020) containing 88,647 labeled 111-dimensional features to predict whether a website is phishing or legitimate. 96 of the features in the dataset contain information extracted from the domain name and IP, and the other 15 contain information about the website itself. Each of the instances has been verified by multiple sources via the industry-standard PhishTank registry. 30,647 of the instances are labeled as phishing and the other 58,000 instances are labeled as legitimate.
 
 ## Methods
 
@@ -35,6 +35,19 @@ Approach Ideas: [https://towardsdatascience.com/phishing-domain-detection-with-m
 Kaggle: [https://www.kaggle.com/ahmednour/website-phishing-data-set](https://www.kaggle.com/ahmednour/website-phishing-data-set)
 
 Science Direct: [https://www.sciencedirect.com/science/article/pii/S2352340920313202](https://www.sciencedirect.com/science/article/pii/S2352340920313202)
+
+## Data
+We have an imbalanced “full” dataset with 88647 data points and class ratio (phishing/non-phishing) of 0.528, and a “balanced” “small” subset with 58645 data points and class ratio (phishing/non-phishing) of 1.095. In the following sections will report results for the “full” dataset. The unbalanced dataset is more reflective of the real world: there are more benign emails than phishing emails on the internet.
+
+<p align="center>
+<img src="images\data1.png" alt="data1.png">
+</p>
+
+Most of our features in the dataset are URL related according to the following URL sub-sections: (Vrbančič, 2020)
+
+<p align="center>
+<img src="images\data2.png" alt="data2.png">
+</p>
 
 ## Potential Results/Discussion
 
