@@ -94,7 +94,7 @@ We concentrated on Supervised Learning and implemented a couple of different way
 
 <img src="images\dt_result.png" alt="dt_result.png">
 
-* Analysis
+* Reasons
     * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
         * “qty_dollar_file”: 0.516
         * “time_domain_activation”: 0.117
@@ -120,7 +120,7 @@ We concentrated on Supervised Learning and implemented a couple of different way
 
 <img src="images\knn_result.png" alt="knn_result.png">
 
-* Analysis
+* Reasons
     * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
 
 ### k-NN - data with reduced dimensionality (PCA) - 2 features
@@ -138,7 +138,7 @@ We concentrated on Supervised Learning and implemented a couple of different way
 
 <img src="images\knn_pca_result.png" alt="knn_pca_result.png">
 
-* Analysis
+* Reasons
     * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
 
 ## Potential Results/Discussion (Project Proposal)
