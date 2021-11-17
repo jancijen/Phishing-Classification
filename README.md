@@ -61,6 +61,17 @@ We ran t-SNE to reduce the full training dataset from 112 features to 2 and colo
 
 <img src="images\data3.png" alt="data3.png">
 
+### Data Pre-Processing
+
+Features Dimensionality Reduction
+* We attempted to use feature reduction using PCA
+    * We used PCA to have fewer dimensions only for our k-NN baseline model, because a decision tree, in some sort, performs “feature selection” by itself.
+    * Our dataset had 111 features and we felt like using a feature reduction algorithm shall help make our results better.
+* We used the in-built PCA function found in sklearn.decomposition to perform the features dimensionality reduction.
+* For the actual PCA values, we tested a number of combinations of retained variances to try and see which ones gave us the best results and we ended up using 99% retained variance which resulted in 2 dimensions/features.
+* What we found out tho was using PCA for dimensionality reduction actually did not improve the results of k-NN at all. It in fact made the results a little worse.
+* The reason we think this is because the data points are quite different and have many parameters they differ by, so performing a k-NN algorithm did not lead to good clustering.
+
 ## Potential Results/Discussion
 
 We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
