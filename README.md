@@ -74,7 +74,7 @@ Features Dimensionality Reduction
 
 ## Results and Analysis
 
-We concentrated on Supervised Learning and implemented several different ways of performing Supervised Learning on out dataset.
+We concentrated on Supervised Learning and implemented a couple of different ways of performing Supervised Learning on our dataset.
 
 ### Decision Tree
 
