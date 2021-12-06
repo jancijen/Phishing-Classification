@@ -177,7 +177,7 @@ Assignments Due: Midpoint Report (Nov 16), Final Report (Dec 7)
 Milestones to Aim For:
 The name listed on each task does not mean that person must do the task himself, rather it means he is in charge of getting other team members to complete the task.
 
-Expertise Areas: ML Coding: (All members), Github Workflows: (Jano), Video Editing: (Josh)
+Expertise Areas: ML Coding: (All members), Github Workflows: (Jan), Video Editing: (Josh)
 
 Data Cleanup: October 20 (Tejas)
 
@@ -189,8 +189,8 @@ Initial attempt at Supervised Learning: November 1st (Each team member shall att
 
 Finalize Unsupervised Learning: November 5th (Josh)
 
-Finish Midterm Report: November 14th (Jano)
+Finish Midterm Report: November 14th (Jan)
 
-Polish results from both Supervised and Unsupervised Learnings: (Jano and Tillson)
+Polish results from both Supervised and Unsupervised Learnings: (Jan and Tillson)
 
 Final Report and Video: December 6th (Josh)
