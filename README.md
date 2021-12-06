@@ -159,13 +159,13 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 ## Video
 
-Proposal Link: [https://www.youtube.com/watch?v=25_FMB6S8uM](https://www.youtube.com/watch?v=25_FMB6S8uM)
+Proposal Video Link: [https://www.youtube.com/watch?v=25_FMB6S8uM](https://www.youtube.com/watch?v=25_FMB6S8uM)
 
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/25_FMB6S8uM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-Video Link: 
+Final Video Link: 
 
 ## Project Timeline
 
