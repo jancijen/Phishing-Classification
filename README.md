@@ -7,7 +7,7 @@ Team Members:
 4. Jan Jendrusak – jjendrusak3
 5. Jiaxuan Chen – jchen813
 
-# Project Proposal
+# Midterm Project Report
 
 ## Project Name
 
@@ -18,7 +18,7 @@ In 2020, phishing was the most prevalent type of cybercrime, costing the America
 
 ## Problem Definition
 
-We propose using a recent dataset (Vrbančič, 2020) containing 88,647 labelled 111-dimensional features to predict whether a website is phishing or legitimate. 96 of the features in the dataset contain information extracted from the domain name and IP, and the other 15 contain information about the website itself. Each of the instances have been verified by multiple sources via the industry standard PhishTank registry. 30,647 of the instances are labeled as phishing and the other 58,000 instances are labeled as legitimate.
+We used a recent dataset (Vrbančič, 2020) containing 88,647 labeled 111-dimensional features to predict whether a website is phishing or legitimate. 96 of the features in the dataset contain information extracted from the domain name and IP, and the other 15 contain information about the website itself. Each of the instances has been verified by multiple sources via the industry-standard PhishTank registry. 30,647 of the instances are labeled as phishing and the other 58,000 instances are labeled as legitimate.
 
 ## Methods
 
@@ -36,7 +36,112 @@ Kaggle: [https://www.kaggle.com/ahmednour/website-phishing-data-set](https://www
 
 Science Direct: [https://www.sciencedirect.com/science/article/pii/S2352340920313202](https://www.sciencedirect.com/science/article/pii/S2352340920313202)
 
-## Potential Results/Discussion
+## Data
+
+We have an imbalanced “full” dataset with 88647 data points and class ratio (phishing/non-phishing) of 0.528, and a “balanced” “small” subset with 58645 data points and class ratio (phishing/non-phishing) of 1.095. In the following sections will report results for the “full” dataset. The unbalanced dataset is more reflective of the real world: there are more benign emails than phishing emails on the internet.
+
+<img src="images\data1.png" alt="data1.png">
+
+Most of our features in the dataset are URL related according to the following URL sub-sections: (Vrbančič, 2020)
+
+<img src="images\data2.png" alt="data2.png">
+
+### Data Split
+
+For the train-validation-test split we used a stratified split to split the dataset (88647 data points) as follows:
+* 60% - training set (53188 data points)
+* 20% - validation set (17729 data points)
+* 20% - test set (17730 data points)
+
+All of the splits have the same class ratio (phishing/non-phishing) of 0.528.
+
+### Data Analysis
+
+We ran t-SNE to reduce the full training dataset from 112 features to 2 and colored the data points according to their class (phishing or non-phishing website):
+
+<img src="images\data3.png" alt="data3.png">
+
+### Data Pre-Processing
+
+Features Dimensionality Reduction
+* We attempted to use feature reduction using PCA
+    * We used PCA to have fewer dimensions only for our k-NN baseline model, because a decision tree, in some sort, performs “feature selection” by itself.
+    * Our dataset had 111 features and we felt like using a feature reduction algorithm shall help make our results better.
+* We used the in-built PCA function found in sklearn.decomposition to perform the features dimensionality reduction.
+* For the actual PCA values, we tested a number of combinations of retained variances to try and see which ones gave us the best results and we ended up using 99% retained variance which resulted in 2 dimensions/features.
+* What we found out tho was using PCA for dimensionality reduction actually did not improve the results of k-NN at all. It in fact made the results a little worse.
+* The reason we think this is because the data points are quite different and have many parameters they differ by, so performing a k-NN algorithm did not lead to good clustering.
+
+## Results and Analysis
+
+We concentrated on Supervised Learning and implemented a couple of different ways of performing Supervised Learning on our dataset.
+
+### Decision Tree
+
+1. Decision Tree
+    * We used grid search to optimize hyperparameters on the validation dataset, namely: 
+        * Criterion (gini or entropy)
+        * Max depth
+    * The best decision tree was the one with entropy criterion and max depth of 20: Accuracy: 0.950, Balanced accuracy: 0.945, F1: 0.928, Precision: 0.926, Recall: 0.930
+    * We retrained a decision tree with these hyperparameters on merged training and validation data and it yielded the following test results:
+        * F1: 0.932
+        * Accuracy: 0.953
+        * Balanced accuracy: 0.948
+        * MCC: 0.897
+        * Precision: 0.936
+        * Recall: 0.929
+        * FPR: 0.034
+
+<img src="images\dt_result.png" alt="dt_result.png">
+
+* Reasons
+    * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
+        * “qty_dollar_file”: 0.516
+        * “time_domain_activation”: 0.117
+        * “directory_length”: 0.076
+    * “qty_dollar_file” corresponds to the number of occurrences of “$” in the file section of URL - since there is no clear convention for using “$” in URL this seems rather arbitrary.
+    * “time_domain_activation” corresponds to domain activation time (in days) - this sounds like a reasonable feature to be helpful to determine whether a web page is or is not phishing.
+    * “directory_length” corresponds to the length of the directory section of URL - this might sound reasonable since phishing websites might try to use nested folders to create longer and therefore less readable URL.
+
+### k-NN
+
+2. k-NN
+    * We used grid search to optimize hyperparameters on the validation dataset, namely: 
+        * Number of neighbors
+    * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.883, Balanced accuracy: 0.872, F1: 0.832, Precision: 0.827, Recall: 0.837
+    * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
+        * F1: 0.846
+        * Accuracy: 0.893
+        * Balanced accuracy: 0.883
+        * MCC: 0.764
+        * Precision: 0.841
+        * Recall: 0.851
+        * FPR: 0.085
+
+<img src="images\knn_result.png" alt="knn_result.png">
+
+* Reasons
+    * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
+
+### k-NN - data with reduced dimensionality (PCA) - 2 features
+
+3. k-NN - data with reduced dimensionality (PCA) - 2 features
+    * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.820, Balanced accuracy: 0.804, F1: 0.742, Precision: 0.736, Recall: 0.749
+    * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
+        * F1: 0.756
+        * Accuracy: 0.831
+        * Balanced accuracy: 0.814
+        * MCC: 0.627
+        * Precision: 0.753
+        * Recall: 0.760
+        * FPR: 0.132
+
+<img src="images\knn_pca_result.png" alt="knn_pca_result.png">
+
+* Reasons
+    * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
+
+## Potential Results/Discussion (Project Proposal)
 
 We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
 
