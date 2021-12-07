@@ -255,6 +255,34 @@ Final Video Link:
 
 [3] Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data in Brief, vol. 33, Dec. 2020, p. 106438. ScienceDirect, [https://doi.org/10.1016/j.dib.2020.106438](https://doi.org/10.1016/j.dib.2020.106438).
 
+## Contributions
+
+* Researching Datasets - Tusheet, Tillson, Tejas
+
+* Preprocessing:
+    * Train/validation/test split - Jan
+    * PCA - Jan
+
+* Visualizations:
+    * t-SNE - Jan
+    * Feature Importance/CDFs - Tillson
+
+* Models:
+    * k-NN (with and without PCA) - Jan, Tejas
+    * Decision Tree - Jan
+    * Neural Network - Jan
+    * SVM - Tejas
+
+* Evaluate and Implement Baseline Methods - Tusheet, Josh
+
+* Analysis
+    * Model Robustness Comparison - Tillson
+    * Model Comparative Analysis - Tusheet
+
+* Report Writeup - Tusheet
+
+* Video Recording and Editing - Josh
+
 ## Project Timeline (Project Proposal)
 
 Main Goal:
