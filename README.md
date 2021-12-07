@@ -104,13 +104,13 @@ Our work is directly useful in a real-world situation: it could be implemented i
 ### 2. Neural Net
 
 * We used a simple neural network with 3 hidden (linear) layers with ReLU activation functions, batch normalization, and dropouts after each linear layer with 0.1 probability. We could see that the results were quite good but even with hyperparameter tuning, the neural network couldn’t achieve better results. The final test results are as follows:
-    * F1: 0.956
-    * Accuracy: 0.969
-    * Balanced accuracy: 0.966
-    * MCC: 0.932
-    * Precision: 0.956
-    * Recall: 0.955
-    * FPR: 0.023
+    * F1: 0.941
+    * Accuracy: 0.959
+    * Balanced accuracy: 0.954
+    * MCC: 0.910
+    * Precision: 0.943
+    * Recall: 0.939
+    * FPR: 0.030
 
 <img src="images\nn_result.png" alt="nn_result.png" height="360" width="470">
 
