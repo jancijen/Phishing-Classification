@@ -74,7 +74,7 @@ Features Dimensionality Reduction
 
 ## Results and Analysis
 
-We concentrated on Supervised Learning and implemented a couple of different ways of performing Supervised Learning on our dataset.
+### Supervised Learning
 
 ### Decision Tree
 
@@ -123,9 +123,70 @@ We concentrated on Supervised Learning and implemented a couple of different way
 * Reasons
     * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
 
+### Neural Net
+
+3. Neural Net
+    * We used a simple neural network with 3 hidden (linear) layers with ReLU activation functions, batch normalization, and dropouts after each linear layer with 0.1 probability. We could see that the results were quite good but even with hyperparameter tuning, the neural network couldn’t achieve better results. The final test results are as follows:
+        * F1: 0.956
+        * Accuracy: 0.969
+        * Balanced accuracy: 0.966
+        * MCC: 0.932
+        * Precision: 0.956
+        * Recall: 0.955
+        * FPR: 0.023
+
+<img src="images\nn_result.png" alt="nn_result.png">
+
+### Decision Tree
+
+4. Decision Tree
+    * We used a single decision tree and evaluated the model performance with different max_depths ranging from 5 to 80 (in increments of 10). We additionally varied the search criteria, selecting entropy and gini as potential solutions. We ultimately found that the entropy criterion with a max depth of 20 as the best. The final scores are listed below:
+        * F1: 0.932
+        * Accuracy: 0.953
+        * Balanced accuracy: 0.948
+        * MCC: 0.89
+        * Precision: 0.936
+        * Recall: 0.929
+        * FPR: 0.034
+
+<img src="images\dt_new_result.png" alt="dt_new_result.png">
+
+### Random Forest
+
+5. Random Forest
+    * We used random forest and we tested it with different max_depths from 5 to 50  and n_estimators from 10 to 70. We found that test scores such as accuracies go up as max_depths and n_estimators increase until they reach a certain height. There are very little or no changes starting from max_depths of 30 and n_estimators of 40. The final scores are listed below:
+        * F1: 0.956
+        * Accuracy: 0.969
+        * Balanced accuracy: 0.966
+        * MCC: 0.932
+        * Precision: 0.956
+        * Recall: 0.955
+        * FPR: 0.023
+
+<img src="images\rf_result.png" alt="rf_result.png">
+
+### SVM
+
+6. SVM
+    * We used the SVM model provided in the sklearn library (sklearn.SVC()). The library provides four different kernels for the SVC, linear, poly, RBF, and sigmoid. Through testing, we found that the RBF kernel gave the best results with gamma scaling turned on, which means a value of 1 / (n_features * X.var()) is used for the value of gamma instead of 1 / (n_features). Both linear and poly kernels gave terrible results, with accuracies of around 20%, whereas the sigmoid kernel gave accuracies of around 50%. The best result was observed with the RBF kernel. The final scores are listed below:
+        * F1: 0.624
+        * Accuracy: 0.762
+        * Balanced accuracy: 0.717
+        * MCC: 0.455
+        * Precision: 0.686
+        * Recall: 0.572
+        * FPR: 0.138
+
+<img src="images\svm_result.png" alt="svm_result.png">
+
+* Reasons
+    * SVM generally does not work too well for very large datasets. Our dataset is very large and has a good amount of noise, likely causing SVM to have bad results. Even after running the model with hyperparameter tuning the results were not very high (60% for PCA, 75% for non-PCA). Our data is very tabular and hence favors models like random forest or decision trees over a model like SVM. By using PCA our results became worse due to the lack of features to vectorize for SVM.
+
+### Unsupervised Learning
+
 ### k-NN - data with reduced dimensionality (PCA) - 2 features
 
-3. k-NN - data with reduced dimensionality (PCA) - 2 features
+1. k-NN - data with reduced dimensionality (PCA) - 2 features
     * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.820, Balanced accuracy: 0.804, F1: 0.742, Precision: 0.736, Recall: 0.749
     * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
         * F1: 0.756
@@ -140,6 +201,23 @@ We concentrated on Supervised Learning and implemented a couple of different way
 
 * Reasons
     * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
+
+### SVM - data with reduced dimensionality (PCA)
+
+2. SVM - data with reduced dimensionality (PCA)
+    * We applied PCA and ran our dataset against the same above SVM model we used for supervised learning. The final scores are listed below:
+        * F1: 0.619
+        * Accuracy: 0.602
+        * Balanced accuracy: 0.603
+        * MCC: 0.204
+        * Precision: 0.621
+        * Recall: 0.618
+        * FPR: 0.414
+
+<img src="images\svm_pca_result.png" alt="svm_pca_result.png">
+
+* Reasons
+    * SVM generally does not work too well for very large datasets. Our dataset is very large and has a good amount of noise, likely causing SVM to have bad results. Even after running the model with hyperparameter tuning the results were not very high (60% for PCA, 75% for non-PCA). Our data is very tabular and hence favors models like random forest or decision trees over a model like SVM. By using PCA our results became worse due to the lack of features to vectorize for SVM.
 
 ## Potential Results/Discussion (Project Proposal)
 
@@ -167,7 +245,7 @@ Proposal Video Link: [https://www.youtube.com/watch?v=25_FMB6S8uM](https://www.y
 
 Final Video Link: 
 
-## Project Timeline
+## Proposed Project Timeline
 
 Main Goal:
 To begin working soon and finish the project before the beginning of finals week (Dec 1)
