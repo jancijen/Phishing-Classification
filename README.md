@@ -219,6 +219,32 @@ Features Dimensionality Reduction
 * Reasons
     * SVM generally does not work too well for very large datasets. Our dataset is very large and has a good amount of noise, likely causing SVM to have bad results. Even after running the model with hyperparameter tuning the results were not very high (60% for PCA, 75% for non-PCA). Our data is very tabular and hence favors models like random forest or decision trees over a model like SVM. By using PCA our results became worse due to the lack of features to vectorize for SVM.
 
+## Model Robustness
+
+We calculated the importance of features for each of our models. For the decision tree-based models, we evaluated this using the mean accumulation of impurity decrease for each tree.
+
+We found that across the models, the length of the directory component of a URL (in example.com/this/is/a/directory/?userId=1, “/this/is/a/directory/” is the directory) was the highest indicator of phishing vs. benign. In particular, the probability of a URL being marked as spam increased as the directory length increased. This can be observed directly through a CDF plot of the directory length for each dataset: the tail of the phishing distribution is much longer than the benign distribution.
+
+<img src="images\robustness1.png" alt="robustness1.png">
+
+Although the directory length feature was useful in the detection, exploiting the model's high reliance on this feature comes at a low cost to an attacker.
+
+To demonstrate this, we modified each sample of our training set by changing the directory length on each phishing datapoint to a randomly sampled directory length from the benign dataset while keeping the other features fixed. This is a realistic assumption because an attacker with ownership of a server and domain name could realistically tweak the directory features arbitrarily without affecting other features. We were able to reduce the effectiveness of each of our models with this technique. Our best-performing model, the Random Forest, experienced a reduction in the false-negative rate from .8% to 4%. This attack had a 2.99% success rate on the Decision Tree across the full testing dataset, where a success is defined as the mislabelling of a sample that was originally labeled correctly due to manipulation of the feature vector. After adding in three more features relating to the characters used in the directory (number of ‘$’, number of ‘/’, number of ‘_’), we were able to increase the rate of successful evasions on the Random Forest to 30%. The CDF plots for each of the four features used are shown below. Note that in each case, the phishing URLs have a longer tail and therefore a larger mean than the benign URLs. Of the four features, the directory length was the most effective attack vector. Interestingly, the k-NN and Neural Network models were the most robust to this attack (k-NN: 6.96% success rate with four features; Neural Network: 4.24% success rate with four features), a trade-off with their long training and evaluation times.
+
+<img src="images\robustness2.png" alt="robustness2.png">
+
+<img src="images\robustness3.png" alt="robustness3.png">
+
+A potential explanation for these results is that modern phishing attacks are oftentimes transmitted through trusted sites, for example, through a Google Form that generates a long, unique hash as part of the directory. We are unable to prove this, however, as the dataset does not include the actual phishing URLs. Future feature sets could include a feature indicative of shared hosting services (e.g. Google Forms or github.io), such as a binary variable for whether a site offers shared hosting or a measure of the number of malicious URLs under a certain domain name.
+
+## Conclusions
+
+### Validation Results
+
+Overall based on our above models and respective analysis, the best performing model is the Random Forest. The Decision Tree also performs very well. We believe this is because of the tabular character of our dataset.
+
+<img src="images\validation_result.png" alt="validation_result.png">
+
 ## Potential Results/Discussion (Project Proposal)
 
 We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
