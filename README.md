@@ -72,7 +72,15 @@ Features Dimensionality Reduction
 * What we found out tho was using PCA for dimensionality reduction actually did not improve the results of k-NN at all. It in fact made the results a little worse.
 * The reason we think this is because the data points are quite different and have many parameters they differ by, so performing a k-NN algorithm did not lead to good clustering.
 
-## Results and Analysis
+## Potential Results/Discussion (Project Proposal)
+
+We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
+
+Additionally, we could contribute to the interpretability of our model by characterizing adversarial examples that result in misclassification. We could then perform novel work by analyzing the effect of a monotonicity property (Romeo, 2018) on the Decision Tree classifier in an attempt to increase the difficulty of an adversarial attack.
+
+Our work is directly useful in a real-world situation: it could be implemented in browsers to warn/block users or email clients to analyze incoming/outgoing mail for spam classification.
+
+## Results and Analysis (Final Report)
 
 ### Supervised Learning
 
@@ -245,22 +253,6 @@ Overall based on our above models and respective analysis, the best performing m
 
 <img src="images\validation_result.png" alt="validation_result.png">
 
-## Potential Results/Discussion (Project Proposal)
-
-We hope to obtain an accurate model that can classify if a website is phishing or not. Furthermore, we hope to identify which of our models performs better and to analyze the cases in which each excels and fails.
-
-Additionally, we could contribute to the interpretability of our model by characterizing adversarial examples that result in misclassification. We could then perform novel work by analyzing the effect of a monotonicity property (Romeo, 2018) on the Decision Tree classifier in an attempt to increase the difficulty of an adversarial attack.
-
-Our work is directly useful in a real-world situation: it could be implemented in browsers to warn/block users or email clients to analyze incoming/outgoing mail for spam classification.
-
-## References
-
-[1] FBI (2020). Internet Crime Report 2020. Federal Bureau of Investigation. [https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf).
-
-[2] Íncer Romeo, Íñigo, et al. “Adversarially Robust Malware Detection Using Monotonic Classification.” Proceedings of the Fourth ACM International Workshop on Security and Privacy Analytics, Association for Computing Machinery, 2018, pp. 54–63. ACM Digital Library, [https://doi.org/10.1145/3180445.3180449](https://doi.org/10.1145/3180445.3180449).
-
-[3] Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data in Brief, vol. 33, Dec. 2020, p. 106438. ScienceDirect, [https://doi.org/10.1016/j.dib.2020.106438](https://doi.org/10.1016/j.dib.2020.106438).
-
 ## Video
 
 Proposal Video Link: [https://www.youtube.com/watch?v=25_FMB6S8uM](https://www.youtube.com/watch?v=25_FMB6S8uM)
@@ -271,7 +263,15 @@ Proposal Video Link: [https://www.youtube.com/watch?v=25_FMB6S8uM](https://www.y
 
 Final Video Link: 
 
-## Proposed Project Timeline
+## References
+
+[1] FBI (2020). Internet Crime Report 2020. Federal Bureau of Investigation. [https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf](https://www.ic3.gov/Media/PDF/AnnualReport/2020_IC3Report.pdf).
+
+[2] Íncer Romeo, Íñigo, et al. “Adversarially Robust Malware Detection Using Monotonic Classification.” Proceedings of the Fourth ACM International Workshop on Security and Privacy Analytics, Association for Computing Machinery, 2018, pp. 54–63. ACM Digital Library, [https://doi.org/10.1145/3180445.3180449](https://doi.org/10.1145/3180445.3180449).
+
+[3] Vrbančič, Grega, et al. “Datasets for Phishing Websites Detection.” Data in Brief, vol. 33, Dec. 2020, p. 106438. ScienceDirect, [https://doi.org/10.1016/j.dib.2020.106438](https://doi.org/10.1016/j.dib.2020.106438).
+
+## Project Timeline (Project Proposal)
 
 Main Goal:
 To begin working soon and finish the project before the beginning of finals week (Dec 1)
