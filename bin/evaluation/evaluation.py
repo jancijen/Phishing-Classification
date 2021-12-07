@@ -19,8 +19,8 @@ def evaluate_classifier(y_true, y_pred, y_pred_prob, metrics, sample_weights=Non
         
     # Confusion matrix
     cm_labels = [True, False]
-    cm = confusion_matrix(y_true, y_pred, labels=cm_labels,sample_weight=sample_weights)
-    cm_df = pd.DataFrame(cm/np.sum(cm, axis=1)[:, np.newaxis], index=cm_labels, columns=cm_labels)
+    cm = confusion_matrix(y_true, y_pred, labels=cm_labels,sample_weight=sample_weights, normalize='true')
+    cm_df = pd.DataFrame(cm, index=cm_labels, columns=cm_labels)
     # Plot confusion matrix
     ax = sns.heatmap(round(cm_df,2), annot=True, fmt=',')
     ax.set_xlabel('Predicted labels'); ax.set_ylabel('True labels'); 
