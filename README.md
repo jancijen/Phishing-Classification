@@ -84,9 +84,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 ### Supervised Learning
 
-### Decision Tree
+### 1. Decision Tree
 
-1. Decision Tree
+Decision Tree
     * We used a single decision tree and evaluated the model performance with different max_depths ranging from 5 to 80 (in increments of 10). We additionally varied the search criteria, selecting entropy and gini as potential solutions. We ultimately found that the entropy criterion with a max depth of 20 was the best.
     * We used grid search to optimize hyperparameters on the validation dataset, namely: 
         * Criterion (gini or entropy)
@@ -112,9 +112,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * “time_domain_activation” corresponds to domain activation time (in days) - this sounds like a reasonable feature to be helpful to determine whether a web page is or is not phishing.
     * “directory_length” corresponds to the length of the directory section of URL - this might sound reasonable since phishing websites might try to use nested folders to create longer and therefore less readable URL.
 
-### k-NN
+### 2. k-NN
 
-2. k-NN
+k-NN
     * We used grid search to optimize hyperparameters on the validation dataset, namely: 
         * Number of neighbors
     * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.883, Balanced accuracy: 0.872, F1: 0.832, Precision: 0.827, Recall: 0.837
@@ -132,9 +132,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 * Reasons
     * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
 
-### Neural Net
+### 3. Neural Net
 
-3. Neural Net
+Neural Net
     * We used a simple neural network with 3 hidden (linear) layers with ReLU activation functions, batch normalization, and dropouts after each linear layer with 0.1 probability. We could see that the results were quite good but even with hyperparameter tuning, the neural network couldn’t achieve better results. The final test results are as follows:
         * F1: 0.956
         * Accuracy: 0.969
@@ -146,9 +146,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 <img src="images\nn_result.png" alt="nn_result.png">
 
-### Random Forest
+### 4. Random Forest
 
-4. Random Forest
+Random Forest
     * We used random forest and we tested it with different max_depths from 5 to 50  and n_estimators from 10 to 70. We found that test scores such as accuracies go up as max_depths and n_estimators increase until they reach a certain height. There are very little or no changes starting from max_depths of 30 and n_estimators of 40. The final scores are listed below:
         * F1: 0.956
         * Accuracy: 0.969
@@ -160,9 +160,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 <img src="images\rf_result.png" alt="rf_result.png">
 
-### SVM
+### 5. SVM
 
-5. SVM
+SVM
     * We used the SVM model provided in the sklearn library (sklearn.SVC()). The library provides four different kernels for the SVC, linear, poly, RBF, and sigmoid. Through testing, we found that the RBF kernel gave the best results with gamma scaling turned on, which means a value of 1 / (n_features * X.var()) is used for the value of gamma instead of 1 / (n_features). Both linear and poly kernels gave terrible results, with accuracies of around 20%, whereas the sigmoid kernel gave accuracies of around 50%. The best result was observed with the RBF kernel. The final scores are listed below:
         * F1: 0.624
         * Accuracy: 0.762
@@ -179,9 +179,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 ### Unsupervised Learning
 
-### k-NN - data with reduced dimensionality (PCA) - 2 features
+### 1. k-NN - data with reduced dimensionality (PCA) - 2 features
 
-1. k-NN - data with reduced dimensionality (PCA) - 2 features
+k-NN - data with reduced dimensionality (PCA) - 2 features
     * The best k-NN classifier was the one using a single neighbor (k = 1): Accuracy: 0.820, Balanced accuracy: 0.804, F1: 0.742, Precision: 0.736, Recall: 0.749
     * We retrained a k-NN classifier with this hyperparameter on merged training and validation data and it yielded the following test results:
         * F1: 0.756
@@ -197,9 +197,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 * Reasons
     * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
 
-### SVM - data with reduced dimensionality (PCA)
+### 2. SVM - data with reduced dimensionality (PCA)
 
-2. SVM - data with reduced dimensionality (PCA)
+SVM - data with reduced dimensionality (PCA)
     * We applied PCA and ran our dataset against the same above SVM model we used for supervised learning. The final scores are listed below:
         * F1: 0.619
         * Accuracy: 0.602
