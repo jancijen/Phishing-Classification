@@ -95,7 +95,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.955
     * FPR: 0.023
 
-<img src="images\rf_result.png" alt="rf_result.png">
+<img src="images\rf_result.png" alt="rf_result.png" height="360" width="470">
 
 ### 2. Neural Net
 
@@ -108,7 +108,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.955
     * FPR: 0.023
 
-<img src="images\nn_result.png" alt="nn_result.png">
+<img src="images\nn_result.png" alt="nn_result.png" height="360" width="470">
 
 ### 3. Decision Tree
 
@@ -126,7 +126,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.929
     * FPR: 0.034
 
-<img src="images\dt_new_result.png" alt="dt_new_result.png">
+<img src="images\dt_new_result.png" alt="dt_new_result.png" height="360" width="470">
 
 * Reasons
     * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
@@ -151,7 +151,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.851
     * FPR: 0.085
 
-<img src="images\knn_result.png" alt="knn_result.png">
+<img src="images\knn_result.png" alt="knn_result.png" height="360" width="470">
 
 * Reasons
     * Having k = 1 as the best hyperparameter might be explained by web pages being highly diverse but when there is one that is almost identical (i.e. the closest neighbor) they will likely share the class label (being or not being a phishing web page).
@@ -167,7 +167,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.572
     * FPR: 0.138
 
-<img src="images\svm_result.png" alt="svm_result.png">
+<img src="images\svm_result.png" alt="svm_result.png" height="360" width="470">
 
 * Reasons
     * SVM generally does not work too well for very large datasets. Our dataset is very large and has a good amount of noise, likely causing SVM to have bad results. Even after running the model with hyperparameter tuning the results were not very high (60% for PCA, 75% for non-PCA). Our data is very tabular and hence favors models like random forest or decision trees over a model like SVM. By using PCA our results became worse due to the lack of features to vectorize for SVM.
@@ -186,7 +186,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.760
     * FPR: 0.132
 
-<img src="images\knn_pca_result.png" alt="knn_pca_result.png">
+<img src="images\knn_pca_result.png" alt="knn_pca_result.png" height="360" width="470">
 
 * Reasons
     * Having worse results than with a full dataset might be explained by the nature of PCA which doesn’t take the target variable into account. Therefore we might have discarded some knowledge from features that were actually important for predicting the class label but didn’t contribute to the variance very much.
@@ -202,7 +202,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
     * Recall: 0.618
     * FPR: 0.414
 
-<img src="images\svm_pca_result.png" alt="svm_pca_result.png">
+<img src="images\svm_pca_result.png" alt="svm_pca_result.png" height="360" width="470">
 
 * Reasons
     * SVM generally does not work too well for very large datasets. Our dataset is very large and has a good amount of noise, likely causing SVM to have bad results. Even after running the model with hyperparameter tuning the results were not very high (60% for PCA, 75% for non-PCA). Our data is very tabular and hence favors models like random forest or decision trees over a model like SVM. By using PCA our results became worse due to the lack of features to vectorize for SVM.
