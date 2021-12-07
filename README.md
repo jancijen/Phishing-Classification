@@ -61,7 +61,7 @@ All of the splits have the same class ratio (phishing/non-phishing) of 0.528.
 
 ### Data Analysis
 
-We ran t-SNE to reduce the full training dataset from 112 features to 2 and colored the data points according to their class (phishing or non-phishing website):
+We ran t-SNE to reduce the full training dataset from 111 features to 2 and colored the data points according to their class (phishing or non-phishing website):
 
 <img src="images\data3.png" alt="data3.png">
 
@@ -261,23 +261,23 @@ Final Video Link:
 
 * Preprocessing:
     * Train/validation/test split - Jan
-    * PCA - Jan
+    * PCA - Jan, Tejas
 
 * Visualizations:
     * t-SNE - Jan
     * Feature Importance/CDFs - Tillson
 
 * Models:
-    * k-NN (with and without PCA) - Jan, Tejas
-    * Decision Tree - Jan
+    * k-NN (with and without PCA) - Jan
+    * Decision Tree - Jan, Josh
     * Neural Network - Jan
     * SVM - Tejas
 
-* Evaluate and Implement Baseline Methods - Tusheet, Josh
+* Evaluate and Implement Baseline Methods - Tusheet, Josh, Jan
 
 * Analysis
     * Model Robustness Comparison - Tillson
-    * Model Comparative Analysis - Tusheet
+    * Model Comparative Analysis - Tusheet, Jan
 
 * Report Writeup - Tusheet
 
