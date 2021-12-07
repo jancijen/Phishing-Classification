@@ -87,10 +87,11 @@ Our work is directly useful in a real-world situation: it could be implemented i
 ### Decision Tree
 
 1. Decision Tree
+    * We used a single decision tree and evaluated the model performance with different max_depths ranging from 5 to 80 (in increments of 10). We additionally varied the search criteria, selecting entropy and gini as potential solutions. We ultimately found that the entropy criterion with a max depth of 20 was the best.
     * We used grid search to optimize hyperparameters on the validation dataset, namely: 
         * Criterion (gini or entropy)
         * Max depth
-    * The best decision tree was the one with entropy criterion and max depth of 20: Accuracy: 0.950, Balanced accuracy: 0.945, F1: 0.928, Precision: 0.926, Recall: 0.930
+    * The best decision tree was the one with entropy criterion and max depth of 20: [Accuracy: 0.950, Balanced accuracy: 0.945, F1: 0.928, Precision: 0.926, Recall: 0.930]
     * We retrained a decision tree with these hyperparameters on merged training and validation data and it yielded the following test results:
         * F1: 0.932
         * Accuracy: 0.953
@@ -100,7 +101,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
         * Recall: 0.929
         * FPR: 0.034
 
-<img src="images\dt_result.png" alt="dt_result.png">
+<img src="images\dt_new_result.png" alt="dt_new_result.png">
 
 * Reasons
     * The 3 most important features (with corresponding feature importance values) in our decision tree classifier were:
@@ -145,23 +146,9 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 <img src="images\nn_result.png" alt="nn_result.png">
 
-### Decision Tree
-
-4. Decision Tree
-    * We used a single decision tree and evaluated the model performance with different max_depths ranging from 5 to 80 (in increments of 10). We additionally varied the search criteria, selecting entropy and gini as potential solutions. We ultimately found that the entropy criterion with a max depth of 20 as the best. The final scores are listed below:
-        * F1: 0.932
-        * Accuracy: 0.953
-        * Balanced accuracy: 0.948
-        * MCC: 0.89
-        * Precision: 0.936
-        * Recall: 0.929
-        * FPR: 0.034
-
-<img src="images\dt_new_result.png" alt="dt_new_result.png">
-
 ### Random Forest
 
-5. Random Forest
+4. Random Forest
     * We used random forest and we tested it with different max_depths from 5 to 50  and n_estimators from 10 to 70. We found that test scores such as accuracies go up as max_depths and n_estimators increase until they reach a certain height. There are very little or no changes starting from max_depths of 30 and n_estimators of 40. The final scores are listed below:
         * F1: 0.956
         * Accuracy: 0.969
@@ -175,7 +162,7 @@ Our work is directly useful in a real-world situation: it could be implemented i
 
 ### SVM
 
-6. SVM
+5. SVM
     * We used the SVM model provided in the sklearn library (sklearn.SVC()). The library provides four different kernels for the SVC, linear, poly, RBF, and sigmoid. Through testing, we found that the RBF kernel gave the best results with gamma scaling turned on, which means a value of 1 / (n_features * X.var()) is used for the value of gamma instead of 1 / (n_features). Both linear and poly kernels gave terrible results, with accuracies of around 20%, whereas the sigmoid kernel gave accuracies of around 50%. The best result was observed with the RBF kernel. The final scores are listed below:
         * F1: 0.624
         * Accuracy: 0.762
