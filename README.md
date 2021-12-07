@@ -261,23 +261,23 @@ Final Video Link:
 
 * Preprocessing:
     * Train/validation/test split - Jan
-    * PCA - Jan
+    * PCA - Jan, Tejas
 
 * Visualizations:
     * t-SNE - Jan
     * Feature Importance/CDFs - Tillson
 
 * Models:
-    * k-NN (with and without PCA) - Jan, Tejas
-    * Decision Tree - Jan
+    * k-NN (with and without PCA) - Jan
+    * Decision Tree - Jan, Josh
     * Neural Network - Jan
     * SVM - Tejas
 
-* Evaluate and Implement Baseline Methods - Tusheet, Josh
+* Evaluate and Implement Baseline Methods - Tusheet, Josh, Jan
 
 * Analysis
     * Model Robustness Comparison - Tillson
-    * Model Comparative Analysis - Tusheet
+    * Model Comparative Analysis - Tusheet, Jan
 
 * Report Writeup - Tusheet
 
