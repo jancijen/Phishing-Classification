@@ -61,7 +61,7 @@ All of the splits have the same class ratio (phishing/non-phishing) of 0.528.
 
 ### Data Analysis
 
-We ran t-SNE to reduce the full training dataset from 112 features to 2 and colored the data points according to their class (phishing or non-phishing website):
+We ran t-SNE to reduce the full training dataset from 111 features to 2 and colored the data points according to their class (phishing or non-phishing website):
 
 <img src="images\data3.png" alt="data3.png">
 
