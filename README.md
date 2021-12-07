@@ -28,7 +28,7 @@ We used a recent dataset (Vrbančič, 2020) containing 88,647 labeled 111-dimens
 
 Unsupervised: We begin by running Principal Component Analysis on the feature set to reduce the dimensionality and to optimize our training.
 
-Supervised: We train three models using the reduced feature set, namely a model based on decision trees, one based on neural networks, and one based on an SVM to predict whether unseen examples are phishing or legitimate.
+Supervised: We train five models using the reduced feature set, namely a model based on decision trees, one based on random forest, one based on neural networks, and one based on an SVM, and one based on k-NN to predict whether unseen examples are phishing or legitimate.
 
 Our entire pipeline can be implemented using scikit-learn and we can perform data visualizations using Seaborn and Matplotlib.
 
